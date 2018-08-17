@@ -40,7 +40,9 @@ public class ArrayList implements List {
 
     @Override
     public Object set(Object value, int index) {
-        return null;
+        Object result = array[index];
+        array[index] = value;
+        return result;
     }
 
     @Override

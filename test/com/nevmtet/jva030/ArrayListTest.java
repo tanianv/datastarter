@@ -41,6 +41,19 @@ public class ArrayListTest {
         assertEquals(2, arrayWithThreeElements.size());
         assertEquals("B", arrayWithThreeElements.get(0));
     }
+    @Test
+    public void testGetObject(){
+        arrayWithThreeElements.get(0);
+        assertEquals("A", arrayWithThreeElements.get(0));
+    }
+    @Test
+    public void testSetObject(){
+        Object updatedObject = arrayWithThreeElements.set("C", 0);
+
+        assertEquals("A", updatedObject);
+        assertEquals("C", arrayWithThreeElements.get(0));
+        assertEquals(3, arrayWithThreeElements.size());
+    }
 
 
 
