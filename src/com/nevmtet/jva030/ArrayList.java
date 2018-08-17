@@ -12,12 +12,25 @@ public class ArrayList implements List {
 
     @Override
     public void add(Object value, int index) {
-
+        if (array.length == size){
+            Object[] newArray = new Object[size * 2];
+            for (index = 0; index < size; index++){
+                newArray[index] = array[index];
+            }
+            array = newArray;
+        }
+        array[size] = value;
+        size++;
     }
 
     @Override
     public Object remove(int index) {
-        return null;
+        Object result = array[index];
+        for (index = 0; index < size; index++){
+            array[index] = array[index + 1];
+        }
+        size --;
+        return result;
     }
 
     @Override
